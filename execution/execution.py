@@ -10,7 +10,6 @@ from config import config
 # Reading the token information
 TOKEN = config.read_token()
 
-
 def query_url(url):
     """
     Def responsible for check if the customer is using the token and

@@ -9,7 +9,6 @@ from config import config
 
 # Reading the token information
 TOKEN = config.read_token()
-# comment here
 
 def query_url(url):
     """

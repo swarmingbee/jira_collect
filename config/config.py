@@ -9,11 +9,12 @@ import json
 # Setting the conf file
 home_dir = os.path.expanduser("~")
 CONF_FILE = home_dir + "/.jira_collect.conf"
+DEFAULT_TOKEN = {"token": ""}
 
 
 def read_token():
     """
-    Def responsible for read the conf file
+    Def responsible for reading the conf file
     """
 
     try:
@@ -23,8 +24,8 @@ def read_token():
     except FileNotFoundError:
         print("Conf file not found! Please, set the token")
         with open(CONF_FILE, "w", encoding="utf-8") as file_ref:
-            file_ref.write("{}")
-        token_in_file = None
+            file_ref.write(json.dumps(DEFAULT_TOKEN))
+        token_in_file = DEFAULT_TOKEN 
 
     return token_in_file['token']
 
